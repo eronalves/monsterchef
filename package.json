@@ -1,0 +1,9 @@
+{
+  "name": "monsterchefapi",
+  "dependencies": {
+    "mongoose": "^4.5.9",
+    "restify": "^4.1.1"
+  },
+  "devDependencies": {
+  }
+}
