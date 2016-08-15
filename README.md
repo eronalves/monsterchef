@@ -1,4 +1,4 @@
-# monsterchef
+# Monster Chef
 
 restify
 mongoose
