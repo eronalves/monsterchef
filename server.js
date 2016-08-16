@@ -5,6 +5,8 @@ var Recipe = require('./app/models/recipe');
 
 var db = mongoose.connect('mongodb://monsterchef:monsterchef@ds161225.mlab.com:61225/monsterchef');
 var db = mongoose.connection;
+
+var port = process.env.PORT || 3000;
 var server = restify.createServer();
 
 db.once('open', function() {
@@ -15,7 +17,7 @@ server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-server.listen(3000, function () {
+server.listen(port, function () {
     console.log("Server started @ 3000");
 });
 
