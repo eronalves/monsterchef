@@ -27,14 +27,14 @@ server.use(function(req,res,next){
  next()
 });
 
-server.get("/recipes", function (req, res, next) {
+server.get("/api/recipes", function (req, res, next) {
     Recipe.find(function (err, recipes) {
         res.end(JSON.stringify(recipes));
     });
     return next();
 });
 
-server.post("/recipe", function (req, res, next) {
+server.post("/api/recipe", function (req, res, next) {
     var newRecipe = Recipe({
         name: req.params.name,
         timeInMinutes: req.params.timeInMinutes,
