@@ -6,7 +6,7 @@ var recipeSchema = mongoose.Schema({
     portions: Number,
     ingredients: [{ description: String }],
     preparation: [{ step: String }],
-    photo: Buffer
+    url: String
 });
 
 var Recipe = mongoose.model('Recipe', recipeSchema);

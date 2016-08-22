@@ -1,9 +1,10 @@
 {
   "name": "monsterchefapi",
   "dependencies": {
+    "aws-sdk": "^2.5.2",
     "mongoose": "^4.5.9",
-    "restify": "^4.1.1"
+    "restify": "^4.1.1",
+    "uuid": "^2.0.2"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
