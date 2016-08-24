@@ -5,7 +5,7 @@ var Recipe = require('./app/models/recipe');
 var uuid = require('uuid');
 var AWS = require('aws-sdk');
 
-AWS.config.update({ accessId: process.env.S3_KEY, secretAccessKey: process.env.S3_SECRET, region: process.env.S3_REGION });
+AWS.config.update({ accessId: process.env.AWS_ACCESS_KEY_ID, secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY, region: process.env.S3_REGION });
 
 var s3Bucket = new AWS.S3( { params: {Bucket: 'monsterchef' } } );
 
