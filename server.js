@@ -4,7 +4,8 @@ var User = require('./app/models/user');
 var Recipe = require('./app/models/recipe');
 var uuid = require('uuid');
 var AWS = require('aws-sdk');
-AWS.config.loadFromPath('./s3config.json');
+
+AWS.config.update({ accessId: process.env.S3_KEY, secretAccessKey: process.env.S3_SECRET });
 
 var s3Bucket = new AWS.S3( { params: {Bucket: 'monsterchef' } } );
 
@@ -73,7 +74,7 @@ function saveImage(req) {
     return s3Bucket.putObject(data).promise().then(function() {
         return 'https://s3-sa-east-1.amazonaws.com/monsterchef/' + data.Key;
     })
-    .catch(function() {
+    .catch(function(err) {
         return '';
     });
 }
